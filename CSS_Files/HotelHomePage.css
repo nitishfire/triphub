@@ -1,0 +1,369 @@
+body {
+    overflow-x: hidden;
+    margin: 0px;
+    background-image: url("../Home_Page_Images/bgimagehotel1.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .logo {
+    width: 55px;
+    height: 42px;
+    float: left;
+    display: block;
+  }
+  
+  .cname { 
+  padding-left: 20px;
+  padding-top: 12px;
+  float: left;
+  font-size: 20;
+  font-family: 'Roboto';
+  font-weight: 800;
+  line-height: 24px;
+  word-wrap: break-word;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    font-family: 'Roboto';
+    font-weight: 800;
+  }
+  
+  .asbtn, .homebtn, .pkgbtn, .amtbtn{
+    float:right;
+  }
+  
+  .asbtn {
+    padding-right: 100px;
+  }
+ 
+  .profileimg {
+    position: absolute;
+    background-size: cover; 
+    height:35px; 
+    padding-top:0px;
+    top: 8px;
+    left: 1445px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+  .profile {
+    height:0px;
+  }
+  
+  .firstbg img {
+    width: 50%;
+    height: 580px;
+    padding-right: 380px;
+    padding-top: 16px;
+    flex-shrink: 0;
+    float: left;
+    margin-left: 0%;
+  }
+  
+  .secondbg img {
+    width: 50%;
+    height: 580px;
+    bottom: 619px;
+    padding-top: 39px;
+    padding-left: 608px;
+    float: right;
+    position: relative;
+  }
+  
+  .gc{
+      width: 855px;
+      height: 300px;
+      padding-top: 290px;
+      padding-left: 0px;
+      top: 39px;
+      left: -70px;
+      margin: 0;
+      background: rgb(255,255,255);
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 26%, rgba(255,255,255,1) 76%, 
+      rgba(255,255,255,0.048144257703081283) 100%);
+      margin-left: 25%;
+      position: relative;
+  }
+  
+
+  .rect1 {
+    position: absolute;
+    padding-left: 620px;
+    bottom: -360px;
+    left: -365px;
+  }
+  
+  
+  .svg1, .svg2{ 
+    filter: drop-shadow(0px 0px 5px rgb(0 0 0 / 2.9));
+  }
+
+
+  .title1, .title2, .title3, .title4, .title5, .title6{
+    font-size: 20;
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 24px;
+    word-wrap: break-word;
+  }
+
+  .title1 {
+  position: absolute;
+  bottom: 898px;
+    right: 770px;
+  }
+
+  .title2 {
+    position: absolute;
+    bottom: 838px;
+      right: 770px;
+    }
+
+  .title3 {
+    position: absolute;
+    bottom: 778px;
+    right: 770px;
+  }
+
+  .title4 {
+    position: absolute;
+    bottom: 718px;
+    right: 770px;
+  }
+
+  .title5 {
+    position: absolute;
+    bottom: 658px;
+    right: 770px;
+  }
+
+  .title6 {
+    position: absolute;
+    bottom: 598px;
+    right: 770px;
+  }
+
+  .hotelid, .roomno, .roomty, .cap, .ppn, .avail{
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 11px 20px;
+    background-color: #eeeeee;
+    color: black;
+    border-style: none;
+    border-radius: 20px;
+  }
+
+  .hotelid {
+    position: absolute;
+    bottom: 890px;
+    right: 525px;
+  }
+
+  .roomno {
+    position: absolute;
+    bottom: 830px;
+    right: 525px;
+  }
+
+  .roomty {
+    position: absolute;
+    bottom: 770px;
+    right: 525px;
+  }
+
+  .cap {
+    position: absolute;
+    bottom: 710px;
+    right: 525px;
+  }
+
+  .ppn {
+    position: absolute;
+    bottom: 650px;
+    right: 525px;
+  }
+
+  .avail {
+    position: absolute;
+    bottom: 590px;
+    right: 525px;
+  }
+
+  .publish{
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px 34px;
+    border-color: #01F0FF;
+    color: black;
+    background-color: white;
+
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 24px;
+    word-wrap: break-word;
+    
+    filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+    position: absolute;
+    bottom: 508px;
+    right: 610px;
+  }
+
+  .manage1{
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px 34px;
+    border-color: #01F0FF;
+    color: black;
+    background-color: white;
+
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 24px;
+    word-wrap: break-word;
+    
+    filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+    position: absolute;
+    bottom: 508px;
+    right: 530px;
+  }
+
+  .verticalline{
+    position: absolute;
+    border-left: 2px solid black;
+    height: 520px;
+    bottom: 455px;
+    right: 500px;
+  }
+
+  .gri1{
+    position: absolute;
+    width: 450px;
+    height: 520px;
+
+    bottom: 456px;
+    right: 50px;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;;
+  }
+
+  .gri2{
+    position: absolute;
+    width: 420px;
+    height: 490px;
+
+    bottom: 470px;
+    right: 65px;
+
+    border-radius: 20px;;
+  }
+
+  .bgimghotel{
+    position: absolute;
+    width: 1600px;
+    height: 800px;
+    left: 365px;
+    bottom: -375px;
+    background-size:cover;
+  }
+
+.hotellisttext {
+    position: absolute;
+    font-size: 20;
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 24px;
+    word-wrap: break-word;
+    color: black;
+    padding: 10px 250px;
+    background-color: white;
+
+    top: 600px;
+    right: 150px;
+    border-radius: 20px;
+    filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+}
+
+
+
+.hlist1 {
+  position:absolute;
+  font-size: 20;
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 24px;
+    word-wrap: break-word;
+    list-style: none;
+
+  top: 720px;
+  right: 400px;
+
+}
+
+
+
+.databorder{
+    background-color: white;
+    border-radius: 20px;
+    height:210px;
+    width: 550px;
+    padding-top:20px;
+    position: relative;
+    left:220px;
+    filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+}
+
+.deleteroom{
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 10px 34px;
+  border-color: #01F0FF;
+  color: black;
+  background-color: white;
+
+  font-family: 'Roboto';
+  font-weight: 800;
+  line-height: 24px;
+  word-wrap: break-word;
+  
+  filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+  position: absolute;
+  bottom: 140px;
+  right: 80px;
+
+  height: 50px;
+  width: 150px;
+}
+
+
+
+.updateroom{
+  font-size: 15px;
+  border-radius: 10px;
+  padding: 10px 34px;
+  border-color: #01F0FF;
+  color: black;
+  background-color: white;
+
+  font-family: 'Roboto';
+  font-weight: 800;
+  line-height: 24px;
+  word-wrap: break-word;
+  
+  filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+  position: absolute;
+  bottom: 30px;
+  right: 80px;
+
+  height: 50px;
+  width: 150px;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "sdp_5th_sem",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon Node_JS_Files/Main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.10.0"
+  }
+}

@@ -1,0 +1,158 @@
+<html>
+    <head>
+        <title>TripHub Booking</title>
+        <link rel="stylesheet" href="CSS_Files/HomePage.css">
+        <link rel="stylesheet" href="CSS_Files/MiddleButton.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    </head>
+
+    <body>
+        <div class="nav">
+            
+            <div class="logoimg">
+                <img class="logo" src="Home_Page_Images/Transparent Triphub Logo.png" alt="TripHub Logo"/>
+            </div>
+            <div class="cname">
+                <a href="../HomePage.html">TripHub</a>
+            </div>
+
+            <div class="signupbtn">
+                <form method="get" action="../RegistrationPage.html">
+                    <input type="submit" name="signup" value="SignUp" class="signup"/>
+                </form>
+            </div>
+
+            <div class="loginbtn">
+                <form method="get" action="../LogInPage.html">
+                    <input type="submit" name="login" value="Login" class="login"/>
+                </form>
+            </div>
+
+           
+            <div class="pkgbtn">
+                <ul>
+                    <a href="../HotelRegistrationPage.html"><li>Hotel LogIn/Register</li></a>
+                </ul>
+            </div>
+            <div class="homebtn">
+                <ul>
+                    <a href="HomePage.html"><li>Home</li></a>
+                </ul>
+            </div>
+               
+
+            <div class="bgimagerow">
+                <div class="firstbg">
+                    <br/><img class="firstbghome" src="Home_Page_Images/firstbghome.jpg" />
+                </div>
+                <div class="secondbg">
+                    <img class="secondbghome" src="Home_Page_Images/secondbghome.jpg" /> 
+                </div>
+                <div class="gc"></div>
+             </div>
+             
+             <div class="bookingselectiion">
+
+                <div class="rect3">
+                    <svg width="1080" height="580" class="svg2">
+                        <rect x="50" y="20" rx="20" ry="20" width="980" height="320"
+                        style="fill:white;stroke:grey;stroke-width:1;opacity: 10;" />
+                    </svg>
+                </div>
+
+                <div class="rect2">
+                    <svg width="980" height="180" class="svg1">
+                        <rect x="50" y="20" rx="20" ry="20" width="880" height="120"
+                        style="fill:white;stroke:grey;stroke-width:1;opacity: 10;" />
+                    </svg>
+                </div>
+                
+                <div class="rect4">
+                    <svg width="1080" height="580" class="svg3">
+                        <rect x="50" y="20" rx="50" ry="50" width="480" height="150"
+                        style="fill: white;stroke:grey;stroke-width:1;opacity: 10;" />
+                    </svg>
+                </div>
+
+                <div class="text2">
+                    <b class="vrii">Vacation Rentals In India</b><br/>
+                    <b class="fabuaor">Find And Book Unique Accommodation On Rentals</b>
+                 </div>
+
+                <div class="form2">
+                    <form method="post" action="/SearchDataFromForm">
+                            <p class="citxt">Availability</p>
+                            <select  class="dropdown3" name="avail" style="width: 160px;">
+                                <option hidden>Select Availability</option>
+                                <% if(data!='') { %>
+                                    <% data.forEach((hd) => { %>
+                                        <% if(hd.roomno!=0) { %>          
+                                            <option value="<%= hd.avail %>"><%= hd.avail %> (<%= hd.name %> <%= hd.roomno %>)</option>
+                                    <% }}); %>
+                                <% } %>
+                            </select>   
+                            <div class="vl"></div>    
+
+                            <p class="eltxt">City Name</p>
+                                <select  class="dropdown" name="cityname" style="width: 130px;">
+                                    <option hidden>Enter Location</option>
+                                    <% if(data!='') { %>
+                                        <% data.forEach((hd) => { %>
+                                            <% if(hd.roomno!=0) { %>          
+                                                <option value="<%= hd.address %>"><%= hd.address %> (<%= hd.name %> <%= hd.roomno %>)</option>
+                                        <% }}); %>
+                                    <% } %>
+                                </select>
+                            <div class="v2"></div>
+
+
+                            <p class="rtxt">Capacity</p>
+                                <select class="dropdown1" name="formcapa" style="width: 150px;">
+                                    <option hidden>Select Capacity</option>
+                                    <% if(data!='') { %>
+                                        <% data.forEach((hd) => { %>
+                                            <% if(hd.roomno!=0) { %>          
+                                                <option value="<%= hd.capacity %>"><%= hd.capacity %> Person In (<%= hd.name %> <%= hd.roomno %>)</option>
+                                        <% }}); %>
+                                    <% } %>
+                                </select>
+                            <div class="v3"></div>
+
+                            <p class="gtxt">RoomType</p>
+                                <select class="dropdown2"  name="rtform" style="width: 165px;">
+                                    <option hidden>Select Room Type</option>
+                                    <% if(data!='') { %>
+                                        <% data.forEach((hd) => { %>
+                                            <% if(hd.roomno!=0) { %>          
+                                                <option value="<%= hd.roomtype %>"><%= hd.roomtype %> (<%= hd.name %> <%= hd.roomno %>)</option>
+                                        <% }}); %>
+                                    <% } %>
+                                </select>
+                             
+                            <input type="submit" value="Search" class="search"/>
+                    </form>
+                </div>
+             </div>
+                    <div class="hotellist">
+                        <h1 class="hotellisttext">Please Register/LogIn To Book Hotels</h1>
+                                    <div  class="hlist1" name="hlist">
+                                <% if(data1!='') { %>
+                                        <% data1.forEach((hd1) => { %>
+                                        <ul class="databorder">
+                                            <li>Hotel Name: <%= hd1.name %></li>
+                                            <li>Hotel Address: <%= hd1.address %></li>
+                                            <li>Room-No: <%= hd1.roomno %></li>
+                                            <li>Room-Type: <%= hd1.roomtype %></li>
+                                            <li>Capacity: <%= hd1.capacity %></li>
+                                            <li>Price Per Night: <%= hd1.pricepernight %></li>
+                                            <li>Availability: <%= hd1.avail %></li>
+                                            <form method="get" action="../RegistrationPage.html">
+                                            <input type="submit" value="Book Room" name="bookroom" class="bookroom"/></form><br>
+                                            </ul>              
+                                        <% }); %>
+                                    <% } %>
+                    </div>    
+         </div>
+    </body>
+</html>
+

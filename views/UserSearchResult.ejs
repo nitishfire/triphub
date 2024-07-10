@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>TripHub Booking</title>
+        <link rel="stylesheet" href="CSS_Files/UserSearchResult.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <script src= "https://code.jquery.com/jquery-3.5.0.js"> </script> 
+        <script src="../Node_JS_Files/Main.js"></script>
+    </head>
+
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack()
+        {
+            window.history.forward();
+        }
+    </script>
+    
+
+    <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+        <div class="nav">
+            
+            <div class="logoimg">
+                <img class="logo" src="Home_Page_Images/Transparent Triphub Logo.png" alt="TripHub Logo"/>
+            </div>
+            <div class="cname">
+                <a href="/AfterLogInUserHomePage">TripHub</a>
+            </div>
+
+            <div class="profile">
+                <a href="../UserProfilePage">
+                <img class="profileimg" src="Home_Page_Images/profileimg.png" ></a>
+              </div>
+
+            <div class="asbtn">
+                <ul>
+                    <a href="./UserProfilePage"><li>Profile</li></a>
+                </ul>
+            </div>
+            <div class="pkgbtn">
+                <ul>
+                    <a href="/HomePage"><li>Sign Out</li></a>
+                </ul>
+            </div>
+            <div class="homebtn">
+                <ul>
+                    <a href="/AfterLogInUserHomePage"><li>Home</li></a>
+                </ul>
+            </div>
+               
+            <div class="hotellist">
+                <h1 class="hotellisttext">Here Is Your Search Result</h1>
+                            <div  class="hlist1" name="hlist">
+                        <% if(data!='') { %>
+                                <% data.forEach((hd) => { %>
+                                <ul class="databorder">
+                                    <li>Hotel Name: <%= hd.name %></li>
+                                    <li>Hotel Address: <%= hd.address %></li>
+                                    <li>Room-No: <%= hd.roomno %></li>
+                                    <li>Room-Type: <%= hd.roomtype %></li>
+                                    <li>Capacity: <%= hd.capacity %></li>
+                                    <li>Price Per Night: <%= hd.pricepernight %></li>
+                                    <li>Availability: <%= hd.avail %></li>
+                                    <form method="post" action="/BookRoom/<%= hd.hotelid %>/<%= hd.name %>/<%= hd.address %>/<%= hd.phoneno %>/<%= hd.roomno %>/<%= hd.roomtype %>/<%= hd.capacity %>/<%= hd.pricepernight %>/<%= hd.avail %>">
+                                        <input type="submit" value="Book Room" name="bookroom" class="bookroom"/></form><br>
+                                    </ul>              
+                                <% }); %>
+                            <% } %>
+            </div>          
+         </div>
+    </body>
+</html>

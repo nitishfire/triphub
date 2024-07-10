@@ -1,0 +1,113 @@
+<html>
+    <head>
+        <title>TripHub Booking</title>
+        <link rel="stylesheet" type="text/css" href="/CSS_Files/HotelUpdatePage.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <script src= "https://code.jquery.com/jquery-3.5.0.js"> </script> 
+    </head>
+
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack()
+        {
+            window.history.forward();
+        }
+    </script>
+    
+
+    <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+        <div class="nav">
+            
+            <div class="logoimg">
+                <img class="logo" src="/Home_Page_Images/Trip Hub logo.png" alt="TripHub Logo"/>
+            </div>
+            <div class="cname">
+                <a href="../HotelHomePage">TripHub</a>
+            </div>
+
+            <div class="profile">
+                <a href="../HotelProfilePage">
+                <img class="profileimg" src="/Home_Page_Images/profileimg.png" ></a>
+              </div>
+
+            <div class="asbtn">
+                <ul>
+                    <a href="./HotelProfilePage"><li>Profile</li></a>
+                </ul>
+            </div>
+            <div class="pkgbtn">
+                <ul>
+                    <a href="/HomePage"><li>Sign Out</li></a>
+                </ul>
+            </div>
+            <div class="homebtn">
+                <ul>
+                    <a href="./HotelHomePage"><li>Home</li></a>
+                </ul>
+            </div>
+               
+
+            <div class="bgimagerow">
+                <div class="firstbg">
+                    <br/><img class="firstbghome" src="/Home_Page_Images/firstbghome.jpg" />
+                </div>
+                <div class="secondbg">
+                    <img class="secondbghome" src="/Home_Page_Images/secondbghome.jpg" /> 
+                </div>
+                <div class="gc"></div>
+             </div>
+             
+
+             <div class="inrect">
+                <div class="rect1">
+                    <svg width="980" height="980" class="svg1">
+                        <rect x="50" y="20" rx="20" ry="20" width="880" height="520"
+                        style="fill:white;stroke:grey;stroke-width:1;opacity: 10;" />
+                    </svg>
+
+
+                    <div class="form1">
+                        <form method="post" action="/UpPage/<%= user.hotelid %>/<%= user.roomno %>" id="hotelpublish">
+                            <div class="text1">
+                                <div class="title1">Hotel-ID:</div>
+                                <input type="text" placeholder="Enter Hotel-ID" value="<%= user.hotelid %>" class="hotelid" name="id" disabled/>
+
+                                <div class="title2">Room-No:</div>
+                                <input type="text" placeholder="Enter Room-No" value="<%= user.roomno %>" class="roomno" name="no" disabled/>
+
+                                <div class="title3">Room Type:</div>
+                                <input type="text" placeholder="Enter Room Type" value="<%= user.roomtype %>" class="roomty" name="type"/>
+
+                                <div class="title4">Room Capacity:</div>
+                                <input type="text" placeholder="Enter Room Capacity" value="<%= user.capacity %>" class="cap" name="cap"/>
+
+                                <div class="title5">Price Per Night:</div>
+                                <input type="text" placeholder="Enter Price Per Night" value="<%= user.pricepernight %>" class="ppn" name="ppn"/>
+
+                                <div class="title6">Availability:</div>
+                                <input type="text" placeholder="Enter Availability (In Days)" value="<%= user.avail %>" class="avail" name="avail"/>
+
+                                <input type="submit" value="Update Room" class="publish" id="publishh"/> 
+                            </div>
+                        </form>
+
+                            <div class="verticalline"></div>
+
+                            <div class="bggr1">
+                                <img class="gri1" src="/Home_Page_Images/gri1.jpg"/>
+                            </div>
+                            <div class="bgimage1">
+                                <img class="gri2" src="/Home_Page_Images/bgimagehotel.jpg"/>
+                            </div>
+
+
+                            <div>
+                                <img src="/Home_Page_Images/bgimagehotel1.jpg" class="bgimghotel"/>
+                            </div> 
+                            </div>
+                    </div>
+                </div>
+             </div>
+         </div>
+    </body>
+</html>

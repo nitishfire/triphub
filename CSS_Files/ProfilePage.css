@@ -1,0 +1,164 @@
+body {
+    background-color: white;
+    overflow-x: hidden;
+    margin: 0px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #d966ff;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .rect1{
+    position: absolute;
+    top: 0px;
+    left: -30px;
+  } 
+
+  .prpimg1{
+    position: absolute;
+    height: 670px;
+    width: 400px;
+    left: 20px;
+    top: 20px;
+
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .svg1 { 
+    filter: drop-shadow(0px 0px 5px rgb(0 0 0 / 1));
+  }
+
+  .logo {
+    position: absolute;
+    width: 55px;
+    height: 42px;
+    left: 30px;
+    top: 30px;
+    display: block;
+  }
+
+  .cname a{
+    position: absolute; 
+    text-decoration: none;
+    padding-left: 20px;
+    padding-top: 12px;
+    font-size: 20;
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 24px;
+    word-wrap: break-word;
+    color: black;
+    left: 65px;
+    top: 30px;
+    }
+
+
+    ul{
+        list-style-type: none;
+    }
+      
+    a{
+        text-decoration: none;
+        color: black;
+        display: flex;
+        font-family: 'Roboto';
+        font-size: 20px;
+        font-weight: 800;
+    }
+   
+    .homebtn{
+        position: absolute;
+        top:30px;
+        right:230px;
+    }
+    .sobtn{
+        position: absolute;
+        top:30px;
+        right:120px;
+    }
+    .profileimg {
+        position: absolute;
+        height: 30px;
+        top: 40px;
+        right: 50px;
+        border: 2px solid black;
+        border-radius: 50%;
+        background-size: cover;
+      }
+
+    .probtn {
+        position: absolute;
+        top:200px;
+        left:150px;
+    }
+
+    .manbtn {
+        position: absolute;
+        top:400px;
+        left:145px;
+    }
+
+    .probodytext ul{
+        position: absolute; 
+        text-decoration: none;
+        padding-left: 20px;
+        padding-top: 12px;
+        font-size: 20;
+        font-family: 'Roboto';
+        font-weight: 800;
+        line-height: 24px;
+        word-wrap: break-word;
+        color: black;
+    }
+
+    .name {
+        top:200px;
+        left: 450px;
+    }
+
+    .usrname {
+        top:250px;
+        left: 450px;
+    }
+
+    .email {
+        top:300px;
+        left: 450px;
+    }
+
+    .phone {
+        top:350px;
+        left: 450px;
+    }
+
+    .pswd {
+        top:400px;
+        left: 450px;
+    }
+
+
+    .uprof{
+        font-size: 15px;
+        border-radius: 10px;
+        padding: 10px 34px;
+        border-color: #d966ff;
+        color: black;
+        background-color: white;
+    
+        font-family: 'Roboto';
+        font-weight: 800;
+        line-height: 24px;
+        word-wrap: break-word;
+        
+        filter: drop-shadow(0px 0px 5px rgb(217 102 255 / 2.9));
+        position: absolute;
+        top: 440px;
+        left: 490px;
+      }
+
+  

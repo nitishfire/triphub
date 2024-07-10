@@ -1,0 +1,178 @@
+body {
+    background-color: white;
+    overflow-x: hidden;
+    margin: 0px;
+    background-image: url("../Home_Page_Images/triphub_bg_login.png");
+  }
+  
+  .logo {
+    width: 55px;
+    height: 42px;
+    float: left;
+    display: block;
+  }
+  
+  .cname { 
+  padding-left: 20px;
+  padding-top: 12px;
+  float: left;
+  font-size: 20;
+  font-family: 'Roboto';
+  font-weight: 800;
+  line-height: 24px;
+  word-wrap: break-word;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    display: flex;
+    font-family: 'Roboto';
+    font-weight: 800;
+  }
+  
+  .asbtn, .homebtn, .pkgbtn, .amtbtn{
+    float:right;
+  }
+  
+  .asbtn {
+    padding-right: 100px;
+  }
+ 
+  .profileimg {
+    position: absolute;
+    background-size: cover; 
+    height:35px; 
+    padding-top:0px;
+    top: 8px;
+    left: 1445px;
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+
+  .profile {
+    height:0px;
+  }
+  
+  
+
+  
+  .text2{
+    padding-top: 100px;
+    bottom: 485px;
+    padding-left: 535px;
+    position: absolute;
+  }
+  
+  .vrii {
+    padding-left:  40px;
+    color: black;
+  font-size: 35px;
+  font-family: Roboto;
+  font-weight: 900;
+  word-wrap: break-word;
+  }
+  
+  .fabuaor {
+    color: black;
+  font-size: 20px;
+  font-family: Roboto;
+  font-weight: 400;
+  word-wrap: break-word;
+  }
+  
+  .rect4 {
+    position: absolute;
+    padding-left: 620px;
+    bottom: 30px;
+    left: -150px;
+  }
+  
+  
+  .svg3 {
+    filter: drop-shadow(0px 0px 5px rgb(0 0 0 / 2.9));
+  }
+
+  .bgimghotel{
+    position: absolute;
+    width: 1600px;
+    height: 800px;
+    left: 0px;
+    bottom: -735px;
+    background-size:cover;
+  }
+
+  .hotellisttext {
+    position: absolute;
+    font-size: 20;
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 24px;
+    word-wrap: break-word;
+    color: black;
+    padding: 10px 250px;
+    background-color: white;
+
+    top: 60px;
+    right: 400px;
+    border-radius: 20px;
+    filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+}
+
+
+  .hlist1 {
+    position:absolute;
+    font-size: 20;
+      font-family: 'Roboto';
+      font-weight: 800;
+      line-height: 24px;
+      word-wrap: break-word;
+      list-style: none;
+  
+    top: 420px;
+    right: 400px;
+  
+  }
+  
+  
+  
+  .databorder{
+      background-color: white;
+      border-radius: 20px;
+      height:310px;
+      width: 550px;
+      padding-top:20px;
+      position: relative;
+      top: -260px;
+      left:-70px;
+      filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+  }
+  
+  .cancelroom{
+    font-size: 15px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    border-color: #01F0FF;
+    color: black;
+    background-color: white;
+  
+    font-family: 'Roboto';
+    font-weight: 800;
+    line-height: 24px;
+    word-wrap: break-word;
+    
+    filter: drop-shadow(0px 0px 5px rgb(0 255 247 / 2.9));
+    position: absolute;
+    bottom: 130px;
+    right: 40px;
+  
+    height: 50px;
+    width: 140px;
+  }
+  
+  
+  

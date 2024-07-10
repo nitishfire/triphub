@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title>TripHub Booking</title>
+        <link rel="stylesheet" href="/CSS_Files/AdminHomePage.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <script src= "https://code.jquery.com/jquery-3.5.0.js"> </script> 
+        <script src="../Node_JS_Files/Main.js"></script>
+    </head>
+
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack()
+        {
+            window.history.forward();
+        }
+    </script>
+    
+
+    <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+        <div class="nav">
+            
+            <div class="logoimg">
+                <img class="logo" src="Home_Page_Images/Transparent Triphub Logo.png" alt="TripHub Logo"/>
+            </div>
+            <div class="cname">
+                <a href="../AdminHomePage">TripHub</a>
+            </div>
+
+            <div class="profile">
+                <a href="/AdminHomePage">
+                <img class="profileimg" src="Home_Page_Images/profileimg.png" ></a>
+              </div>
+
+              <div class="asbtn">
+                <ul>
+                    <a href="../AdminHomePage"><li>Welcome <%= adminname %> &emsp;</li></a>
+                </ul>
+            </div>
+
+            <div class="pkgbtn">
+                <ul>
+                    <a href="/HomePage"><li>Sign Out</li></a>
+                </ul>
+            </div>
+            <div class="homebtn">
+                <ul>
+                    <a href="./AdminHomePage"><li>Home</li></a>
+                </ul>
+            </div>
+           <div class="hrline"></div>
+
+           <div class="hotel">
+            <b>Hotel</b>
+           </div>
+           
+           <div class="customer">
+            <b>Customer</b>
+           </div>
+
+           <div class="hotellist">
+                        <div  class="hlist1" name="hlist">
+                    <% if(data!='') { %>
+                            <% data.forEach((hd) => { %>
+                            <ul class="databorder">
+                                    <li>Name: <%= hd.name %></li>
+                                    <li>ID: <%= hd.hotelid %></li>
+                                    <li>Address: <%= hd.address %></li>
+                                    <li>Phone Number: <%= hd.phoneno %></li>
+                                    <form method="post" action="/DeclineHotel/<%= hd.hotelid %>/<%= hd.name %>/<%= hd.address %>/<%= hd.phoneno %>">
+                                    <input type="submit" value="Decline Hotel" name="decline" class="decline"/></form><br>
+                                </ul>              
+                            <% }); %>
+                        <% } %>
+            </div>   
+
+           <div class="hotellist1">
+                        <div  class="hlist2" name="hlist">
+                    <% if(data1!='') { %>
+                            <% data1.forEach((hd1) => { %>
+                            <ul class="databorder1">
+                                    <li>Name: <%= hd1.name %></li>
+                                    <li>UserName: <%= hd1.username %></li>
+                                    <li>Email: <%= hd1.email %></li>
+                                    <li>Phone Number: <%= hd1.phoneno %></li>
+                                    <li>Current Amount: <%= hd1.amount %></li>
+                                    <form method="post" action="/ShowBookings/<%= hd1.name %>/<%= hd1.username %>">
+                                    <input type="submit" value="View Bookings" name="vb" class="vb"/></form><br>
+                                </ul>              
+                            <% }); %>
+                        <% } %>
+            </div>    
+
+        </div>
+    </body>
+</html>

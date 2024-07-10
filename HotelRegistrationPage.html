@@ -1,0 +1,68 @@
+<html>
+  <head>
+      <title>TripHub</title>
+      <link rel="stylesheet" href="CSS_Files/HotelReg.css">
+
+      <script>
+        function validateForm() {
+                var a = document.forms["hotelregform"]["id"].value;
+                var b = document.forms["hotelregform"]["hname"].value;
+                var c = document.forms["hotelregform"]["adrs"].value;
+                var d = document.forms["hotelregform"]["phone"].value;
+                var e = document.forms["hotelregform"]["pswd"].value;
+                if (a == "") {
+                  alert("Please Enter Hotel ID");
+                  return false;
+                }else if( b == "" ){
+                  alert("Please Enter Hotel Name");
+                  return false;
+                }else if( c == "" ){
+                  alert("Please Enter Address");
+                  return false;
+                }else if( d == "" ){
+                  alert("Please Enter Phone Number");
+                  return false;
+                }else if( e == "" ){
+                  alert("Please Enter Password");
+                  return false;
+                }
+              }
+    
+      </script>
+  </head>
+  <body>
+  <div class="container">
+        <div class="img">
+         <img src="Home_Page_Images/Transprent white logo.png" alt="triphub" width=40 height=40> 
+        </div>
+        <div class="text">
+            <h4><a href="/HomePage" class="text-th">TripHub</a></h4>
+        </div>
+      </div>
+      
+            <div class="Triphub">
+          <form  method="post" action="/HotelRegister" onsubmit="return validateForm()" name="hotelregform">
+                <h1>Registration</h1>
+              <div class ="input-box">
+                <input type="text" placeholder="Enter Hotel-ID" name="id">
+            </div>
+            <div class ="input-box">
+                <input type="text" placeholder="Enter Hotel Name" name="hname">
+            </div>
+                <div class ="input-box">
+                  <input type="text" placeholder="Address" name="adrs">
+                  </div>
+              <div class="input-box">
+                  <input type="text" placeholder="Phone No" name="phone">
+                </div>
+                <div class="input-box">
+                  <input type="password" placeholder="Enter Password" name="pswd"> </div>
+                  <div class="input-box2">
+                <button type="submit" class="btn">Sign Up</button></div>
+                <div class="input-box3">
+                    <center><p>&nbsp;You Have a Account? <a href="../HotelLogInPage.html" class="lhcss">Login here</a></p></center> 
+            </div>
+          </form>
+      </div>
+  </body>
+  <html>

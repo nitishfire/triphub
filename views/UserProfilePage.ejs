@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../CSS_Files/ProfilePage.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    </head>  
+    <script type="text/javascript">
+        window.history.forward();
+        function noBack()
+        {
+            window.history.forward();
+        }
+    </script>
+    <body onLoad="noBack();" onpageshow="if (event.persisted) noBack();" onUnload="">
+        <div class="rect1">
+            <svg width="1900" height="980" class="svg1">
+                <rect x="50" y="20" rx="20" ry="20" width="1475" height="670" style="fill:white;stroke:grey;stroke-width:1;opacity: 10;" />
+            </svg>   
+        </div>
+
+        <div class="prpimg">
+            <img class="prpimg1" src="../Home_Page_Images/purplebg.png"/>
+        </div>
+
+
+            <div class="nav">
+                <div class="logoimg">
+                    <img class="logo" src="Home_Page_Images/Transparent Triphub Logo.png" alt="TripHub Logo"/>
+                </div>
+                <div class="cname">
+                    <a href="../AfterLogInUserHomePage">TripHub</a>
+                </div>
+                <div class="homebtn">
+                    <ul>
+                        <a href="AfterLogInUserHomePage"><li class="txt1">Home</li></a>
+                    </ul>
+                </div>
+                <div class="sobtn">
+                    <ul>
+                        <a href="/HomePage"><li class="txt1">Sign Out</li></a>
+                    </ul>
+                </div>
+
+                <div class="profile">
+                    <a href="../UserProfilePage">
+                    <img class="profileimg" src="Home_Page_Images/profileimg.png" ></a>
+                  </div>
+            </div>
+
+
+            <div class="body">
+                <div class="probtn">
+                    <ul>
+                        <a href="./UserProfilePage"><li>Profile</li></a>
+                    </ul>
+                </div>
+                <div class="manbtn">
+                    <ul>
+                        <a href="./UserBookedListPage"><li>Bookings</li></a>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="profilebody">
+                <div class="probodytext">
+                    <ul class="name">
+                       <li>Name: <%= fullname %></li>
+                    </ul>
+
+                    <ul class="usrname">
+                        <li>UserName: <%= usname %></li>
+                     </ul>
+
+                     <ul class="email">
+                        <li>Email: <%= mail %></li>
+                     </ul>
+
+                     <ul class="phone">
+                        <li>Phone-No: <%= phone %></li>
+                     </ul>
+
+                     <form method="get" action="../AfterLogInUserHomePage">
+                        <input type="submit" value="Home Page" class="uprof"/>
+                     </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+  <head>
+      <title>TripHub</title>
+      <link rel="stylesheet" href="CSS_Files/RegPage.css">
+  </head>
+  <script>
+    function validateForm() {
+            var a = document.forms["userregform"]["fullname"].value;
+            var b = document.forms["userregform"]["username"].value;
+            var c = document.forms["userregform"]["email"].value;
+            var d = document.forms["userregform"]["phone"].value;
+            var e = document.forms["userregform"]["pswd"].value;
+            if (a == "") {
+              alert("Please Enter Full Name");
+              return false;
+            }else if( b == "" ){
+              alert("Please Enter User Name");
+              return false;
+            }else if( c == "" ){
+              alert("Please Enter Email");
+              return false;
+            }else if( d == "" ){
+              alert("Please Enter Email");
+              return false;
+            }else if( e == "" ){
+              alert("Please Enter Password");
+              return false;
+            }
+          }
+
+  </script>
+  <body>
+  <div class="container">
+        <div class="img">
+         <img src="Home_Page_Images/Transprent white logo.png" alt="triphub" width=40 height=40> 
+        </div>
+        <div class="text">
+            <h4><a href="/HomePage" class="text-th">TripHub</a></h4>
+        </div>
+      </div>
+      
+            <div class="Triphub">
+          <form  method="post" action="/Register" onsubmit="return validateForm()" name="userregform">
+                <h1>Registration</h1>
+              <div class ="input-box">
+                <input type="text" placeholder="Enter Name" name="fullname">
+            </div>
+            <div class ="input-box">
+                <input type="text" placeholder="Enter UserName" name="username">
+            </div>
+                <div class ="input-box">
+                  <input type="text" placeholder="Email" name="email">
+                  </div>
+              <div class="input-box">
+                  <input type="text" placeholder="Phone No" name="phone">
+                </div>
+                <div class="input-box">
+                  <input type="password" placeholder="Enter Password" name="pswd"> </div>
+                  <div class="input-box2">
+                <button type="submit" class="btn">Sign Up</button></div>
+                <div class="input-box3">
+                    <center><p>&nbsp;You Have a Account? <a href="../LogInPage.html" class="lhcss">Login here</a></p></center> 
+            </div>
+          </form>
+      </div>
+  </body>
+  <html>
