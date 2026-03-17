@@ -18,8 +18,4 @@ app.use('/api/hotels', require('./routes/hotels'));
 app.use('/api/bookings', require('./routes/bookings'));
 app.use('/api/admin', require('./routes/admin'));
 
-const buildPath = path.join(__dirname, '..', 'client', 'dist');
-app.use(express.static(buildPath));
-app.get('*', (req, res) => { res.sendFile(path.join(buildPath, 'index.html')); });
-
 app.listen(PORT, () => { console.log('TripHub server running on http://localhost:' + PORT); });
