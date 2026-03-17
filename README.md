@@ -142,7 +142,7 @@ triphub/
 ![Hotel Details](https://github.com/user-attachments/assets/8143ccfc-5635-46b1-913f-9787ad177515)
 
 ### Booking Page
-![Booking Page](https://github.com/user-attachments/assets/2bd9d872-d9eb-4849-8b6b-35126c85a852)
+![Booking Page](https://github.com/user-attachments/assets/6f60671e-821c-4535-9027-7fd6ad615c57)
 
 ### User Dashboard
 ![User Dashboard](https://github.com/user-attachments/assets/22c3700a-ba00-4027-9133-e1758bb3e18a)
