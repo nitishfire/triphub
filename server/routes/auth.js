@@ -76,6 +76,29 @@ router.post('/hotel/register', async (req, res) => {
   }
 });
 
+// Update logged-in user's profile (name, phone, avatar)
+router.put('/profile', require('../middleware/auth')('user'), async (req, res) => {
+  try {
+    const { name, phone, avatar } = req.body;
+    const update = {};
+    if (name && name.trim()) update.name = name.trim();
+    if (phone) {
+      if (String(phone).length !== 10) return res.status(400).json({ message: 'Phone must be 10 digits' });
+      update.phone = String(phone);
+    }
+    if (avatar !== undefined) update.avatar = avatar; // base64 or ''
+    const user = await User.findOneAndUpdate(
+      { username: req.user.username },
+      update,
+      { new: true }
+    ).select('-password');
+    if (!user) return res.status(404).json({ message: 'User not found' });
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 router.post('/hotel/login', async (req, res) => {
   try {
     const { id, password } = req.body;

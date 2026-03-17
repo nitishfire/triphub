@@ -354,11 +354,13 @@ export default function AdminDashboard() {
                         <span className="text-lg font-black text-indigo-700">{'\u20B9'}{(user.walletBalance || 0).toLocaleString()}</span>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-2">
-                        <button onClick={(e) => toggleUserStatus(e, user._id)}
-                          className={"rounded-xl text-xs font-bold py-2.5 transition-colors " + (user.active ? 'bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-100' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-100')}>
-                          {user.active ? 'Suspend' : 'Activate'}
-                        </button>
+                      <div className={"grid gap-2 " + (user.username === auth?.username ? 'grid-cols-1' : 'grid-cols-2')}>
+                        {user.username !== auth?.username && (
+                          <button onClick={(e) => toggleUserStatus(e, user._id)}
+                            className={"rounded-xl text-xs font-bold py-2.5 transition-colors " + (user.active ? 'bg-amber-50 text-amber-700 hover:bg-amber-100 border border-amber-100' : 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-100')}>
+                            {user.active ? 'Suspend' : 'Activate'}
+                          </button>
+                        )}
                         <Link to={'/admin/bookings/' + user.name}
                           onClick={(e) => e.stopPropagation()}
                           className="flex items-center justify-center gap-1.5 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl text-xs font-bold py-2.5 transition-colors border border-indigo-100">

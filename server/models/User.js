@@ -7,6 +7,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   type: { type: String, default: 'customer', enum: ['customer', 'admin'] },
   active: { type: Boolean, default: true },
-  walletBalance: { type: Number, default: 50000 }
+  walletBalance: { type: Number, default: 50000 },
+  avatar: { type: String, default: '' }
 }, { timestamps: true });
 module.exports = mongoose.model('User', UserSchema);

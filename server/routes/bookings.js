@@ -13,7 +13,7 @@ router.get('/user-stats', authenticate('user'), async (req, res) => {
     if (!user) return res.status(404).json({ message: 'User not found' });
     const bookings = await Booking.find({ guestName: user.name });
     const totalSpent = bookings.reduce((sum, b) => sum + b.pricePerNight, 0);
-    res.json({ totalBookings: bookings.length, totalSpent, balance: user.walletBalance, name: user.name, username: user.username, email: user.email, phone: user.phone });
+    res.json({ totalBookings: bookings.length, totalSpent, balance: user.walletBalance, name: user.name, username: user.username, email: user.email, phone: user.phone, avatar: user.avatar || '' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
