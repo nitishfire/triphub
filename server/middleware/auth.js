@@ -8,7 +8,9 @@ const authenticate = (type = null) => (req, res, next) => {
   const token = authHeader.split(' ')[1];
   try {
     const decoded = jwt.verify(token, SECRET);
-    if (type && decoded.type !== type)
+    // 'customer' and 'user' are equivalent — handle old tokens that store 'customer'
+    const effectiveType = decoded.type === 'customer' ? 'user' : decoded.type;
+    if (type && effectiveType !== type)
       return res.status(403).json({ message: 'Access forbidden' });
     req.user = decoded;
     next();

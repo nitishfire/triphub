@@ -27,7 +27,13 @@ export function AuthProvider({ children }) {
   const updateUserBalance = (balance) => setUserBalance(balance);
 
   return (
-    <AuthContext.Provider value={{ auth, login, logout, userBalance, updateUserBalance, isUser: auth?.type === 'user', isHotel: auth?.type === 'hotel', isAdmin: auth?.type === 'admin' }}>
+    <AuthContext.Provider value={{
+      auth, login, logout, userBalance, updateUserBalance,
+      // 'customer' is the legacy DB value — treat it the same as 'user'
+      isUser: auth?.type === 'user' || auth?.type === 'customer',
+      isHotel: auth?.type === 'hotel',
+      isAdmin: auth?.type === 'admin'
+    }}>
       {children}
     </AuthContext.Provider>
   );

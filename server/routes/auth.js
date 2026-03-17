@@ -48,8 +48,10 @@ router.post('/login', async (req, res) => {
     const ok = await checkPassword(password, user.password);
     if (!ok) return res.status(401).json({ message: 'Incorrect password' });
     
-    const token = sign({ id: user._id, username, name: user.name, type: user.type });
-    res.json({ token, type: user.type, username, name: user.name });
+    // Always use 'user' for non-admin customers so frontend checks work consistently
+    const tokenType = user.type === 'admin' ? 'admin' : 'user';
+    const token = sign({ id: user._id, username, name: user.name, type: tokenType });
+    res.json({ token, type: tokenType, username, name: user.name });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

@@ -23,22 +23,27 @@ import AdminHotelBookings from './pages/AdminHotelBookings';
 import BookedRoomDetail from './pages/BookedRoomDetail';
 import HotelBookingDetail from './pages/HotelBookingDetail';
 
+// 'customer' is the legacy DB type — normalise it to 'user' for all checks
+function normaliseType(t) {
+  return t === 'customer' ? 'user' : t;
+}
+
 function RequireAuth({ children, type }) {
   const { auth } = useAuth();
   if (!auth) {
     if (type === 'hotel') return <Navigate to="/hotel/login" replace />;
-    if (type === 'admin') return <Navigate to="/login" replace />;
     return <Navigate to="/login" replace />;
   }
-  if (type && auth.type !== type) return <Navigate to="/" replace />;
+  if (type && normaliseType(auth.type) !== type) return <Navigate to="/" replace />;
   return children;
 }
 
 function PublicOnlyRoute({ children }) {
   const { auth } = useAuth();
   if (auth) {
-    if (auth.type === 'admin') return <Navigate to="/admin" replace />;
-    if (auth.type === 'hotel') return <Navigate to="/hotel/dashboard" replace />;
+    const t = normaliseType(auth.type);
+    if (t === 'admin') return <Navigate to="/admin" replace />;
+    if (t === 'hotel') return <Navigate to="/hotel/dashboard" replace />;
     return <Navigate to="/dashboard" replace />;
   }
   return children;
