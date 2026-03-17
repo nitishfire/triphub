@@ -1,24 +1,30 @@
 import axios from 'axios';
 
-//const api = axios.create({ baseURL: '/api', headers: { 'Content-Type': 'application/json' } });
+// ── Backend URL resolution ──────────────────────────────────────────
+// Priority: VITE_API_URL env var  →  auto-detect prod vs dev
+// Dev  (localhost)  : '/api'  →  Vite proxy forwards to localhost:3000
+// Prod (Vercel etc) : hardcoded Render URL so it works without env var
+const RENDER_BACKEND = 'https://triphub-backend-k9lv.onrender.com/api';
 
-// In dev: VITE_API_URL is unset → falls back to '/api' which Vite proxies to localhost:3000
-// In prod: set VITE_API_URL to the Render backend URL, e.g. https://triphub-backend.onrender.com/api
-let baseURL = import.meta.env.VITE_API_URL || '/api';
+const isLocal =
+  typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' ||
+   window.location.hostname === '127.0.0.1');
+
+let baseURL = import.meta.env.VITE_API_URL || (isLocal ? '/api' : RENDER_BACKEND);
 baseURL = baseURL.replace(/\/+$/, '');
-
-// Ensure the /api suffix is present if the user forgot it in Vercel env vars
 if (!baseURL.endsWith('/api')) baseURL += '/api';
 
 const api = axios.create({ baseURL });
 
-
+// Attach JWT token to every request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('triphub_token');
   if (token) config.headers.Authorization = 'Bearer ' + token;
   return config;
 });
 
+// On 401: clear auth and redirect to the correct login page
 api.interceptors.response.use(
   (res) => res,
   (err) => {
