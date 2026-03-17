@@ -2,7 +2,10 @@ import axios from 'axios';
 
 //const api = axios.create({ baseURL: '/api', headers: { 'Content-Type': 'application/json' } });
 
-const baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// Clean the base URL by removing any trailing slashes to prevent double-slash routing issues
+let baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+baseURL = baseURL.replace(/\/+$/, '');
+
 // Ensure the api suffix is present if the user forgot it in Vercel
 const api = axios.create({
   baseURL: baseURL.endsWith('/api') ? baseURL : (baseURL + '/api')
