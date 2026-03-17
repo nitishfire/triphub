@@ -46,8 +46,9 @@ export default function UserDashboard() {
   const fetchRooms = useCallback(async () => {
     try {
       const res = await api.get('/hotels/rooms');
-      setRooms(res.data);
-    } catch {
+      setRooms(res.data || []);
+    } catch (err) {
+      console.error('Failed to load rooms:', err.message);
       toast.error('Failed to load rooms');
     }
   }, []);
@@ -55,12 +56,21 @@ export default function UserDashboard() {
   const fetchBalance = useCallback(async () => {
     try {
       const res = await api.get('/bookings/mine');
-      updateUserBalance(res.data.balance);
-    } catch {}
+      if (res.data?.balance != null) updateUserBalance(res.data.balance);
+    } catch (err) {
+      console.error('Failed to load balance:', err.message);
+    }
   }, [updateUserBalance]);
 
   useEffect(() => {
-    Promise.all([fetchRooms(), fetchBalance()]).finally(() => setLoading(false));
+    const loadData = async () => {
+      try {
+        await Promise.all([fetchRooms(), fetchBalance()]);
+      } catch {} finally {
+        setLoading(false);
+      }
+    };
+    loadData();
   }, [fetchRooms, fetchBalance]);
 
   const handleSearch = async (e) => {

@@ -23,9 +23,10 @@ export default function BookedRoomDetail() {
   useEffect(() => {
     api.get('/bookings/' + id + '/details')
       .then(res => setRoom(res.data))
-      .catch(() => {
-        toast.error('Booking not found');
-        navigate(-1);
+      .catch((err) => {
+        const msg = err.response?.data?.message || err.message || 'Booking not found';
+        toast.error(msg);
+        setTimeout(() => navigate(-1), 1500);
       })
       .finally(() => setLoading(false));
   }, [id, navigate]);

@@ -2,14 +2,15 @@ import axios from 'axios';
 
 //const api = axios.create({ baseURL: '/api', headers: { 'Content-Type': 'application/json' } });
 
-// Clean the base URL by removing any trailing slashes to prevent double-slash routing issues
-let baseURL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+// In dev: VITE_API_URL is unset → falls back to '/api' which Vite proxies to localhost:3000
+// In prod: set VITE_API_URL to the Render backend URL, e.g. https://triphub-backend.onrender.com/api
+let baseURL = import.meta.env.VITE_API_URL || '/api';
 baseURL = baseURL.replace(/\/+$/, '');
 
-// Ensure the api suffix is present if the user forgot it in Vercel
-const api = axios.create({
-  baseURL: baseURL.endsWith('/api') ? baseURL : (baseURL + '/api')
-});
+// Ensure the /api suffix is present if the user forgot it in Vercel env vars
+if (!baseURL.endsWith('/api')) baseURL += '/api';
+
+const api = axios.create({ baseURL });
 
 
 api.interceptors.request.use((config) => {

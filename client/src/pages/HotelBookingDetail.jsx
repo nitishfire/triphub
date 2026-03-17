@@ -23,9 +23,10 @@ export default function HotelBookingDetail() {
   useEffect(() => {
     api.get('/bookings/hotel/' + id + '/details')
       .then(res => setBooking(res.data))
-      .catch(() => {
-        toast.error('Booking not found');
-        navigate(-1);
+      .catch((err) => {
+        const msg = err.response?.data?.message || err.message || 'Booking not found';
+        toast.error(msg);
+        setTimeout(() => navigate(-1), 1500);
       })
       .finally(() => setLoading(false));
   }, [id, navigate]);
