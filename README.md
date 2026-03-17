@@ -34,7 +34,6 @@
 
 **Deployment:**
 - Vercel (Frontend)
-- Database: [Configured in backend]
 
 ---
 
@@ -71,22 +70,8 @@
    # Create .env file in the root directory
    cp .env.example .env
 ```
-   Update the `.env` file with your configuration:
-```
-   REACT_APP_API_URL=http://localhost:5000
-   PORT=5000
-   DATABASE_URL=your_database_url
-```
 
 ### Running Locally
-
-**Start the development server:**
-```bash
-# From the root directory
-npm run dev
-```
-
-Or run client and server separately:
 ```bash
 # Terminal 1 - Start the backend server
 cd server
@@ -126,18 +111,15 @@ The application will be available at `http://localhost:3000`
 ```
 triphub/
 ├── client/              # Frontend (React)
-│   ├── public/
 │   ├── src/
 │   │   ├── components/
 │   │   ├── pages/
-│   │   ├── App.js
-│   │   └── index.js
+│   │   └── App.js
 │   └── package.json
 ├── server/              # Backend (Node.js + Express)
 │   ├── routes/
 │   ├── models/
 │   ├── controllers/
-│   ├── middleware/
 │   └── server.js
 ├── .env                 # Environment variables
 └── package.json
@@ -147,26 +129,26 @@ triphub/
 
 ## Screenshots 📸
 
-### Dashboard
-![Dashboard](<img width="1894" height="870" alt="image" src="https://github.com/user-attachments/assets/37998b8d-1121-46c7-8424-022effa8c742" />)
+### Homepage - Hero Section
+![Homepage](https://github.com/user-attachments/assets/37998b8d-1121-46c7-8424-022effa8c742)
 
-### Login Page
-![Login Page](<img width="1907" height="851" alt="image" src="https://github.com/user-attachments/assets/6498a9ae-832e-4a17-b45b-dfb07cd3a9e0" />)
+### Sign In Page
+![Login Page](https://github.com/user-attachments/assets/6498a9ae-832e-4a17-b45b-dfb07cd3a9e0)
 
 ### Hotel Listings
-![Hotel Listings](https://github.com/nitishfire/triphub/raw/master/Screenshot/2.png)
+![Hotel Listings](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/2.png)
 
 ### Hotel Details
-![Hotel Details](https://github.com/nitishfire/triphub/raw/master/Screenshot/3.png)
+![Hotel Details](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/3.png)
 
 ### Booking Page
-![Booking Page](https://github.com/nitishfire/triphub/raw/master/Screenshot/4.png)
+![Booking Page](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/4.png)
 
 ### User Dashboard
-![User Dashboard](https://github.com/nitishfire/triphub/raw/master/Screenshot/5.png)
+![User Dashboard](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/5.png)
 
-### Confirmation
-![Booking Confirmation](https://github.com/nitishfire/triphub/raw/master/Screenshot/6.png)
+### Booking Confirmation
+![Booking Confirmation](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/6.png)
 
 ---
 
@@ -175,13 +157,6 @@ triphub/
 The application is deployed on **Vercel** and is live at:
 
 **👉 [https://triphub-theta.vercel.app/](https://triphub-theta.vercel.app/)**
-
-### Deploy Your Own
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Configure environment variables in Vercel dashboard
-4. Deploy with a single click
 
 ---
 
@@ -211,8 +186,6 @@ By accessing, downloading, or using this project, you agree to the following:
 - **Modifications**: You can modify the project, but modifications are at your own risk
 - **Functionality**: The project is provided as-is without any warranty
 - **Acceptance**: By downloading and using the project, you accept these terms
-
-For full details, see the [TERMS.md](TERMS.md) file in the repository.
 
 ---
 
