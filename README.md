@@ -136,19 +136,19 @@ triphub/
 ![Login Page](https://github.com/user-attachments/assets/6498a9ae-832e-4a17-b45b-dfb07cd3a9e0)
 
 ### Hotel Listings
-![Hotel Listings](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/2.png)
+![Hotel Listings](https://github.com/user-attachments/assets/f10a8462-0671-41be-bac5-5b94995e2565)
 
 ### Hotel Details
-![Hotel Details](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/3.png)
+![Hotel Details](https://github.com/user-attachments/assets/8143ccfc-5635-46b1-913f-9787ad177515)
 
 ### Booking Page
-![Booking Page](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/4.png)
+![Booking Page](https://github.com/user-attachments/assets/2bd9d872-d9eb-4849-8b6b-35126c85a852)
 
 ### User Dashboard
-![User Dashboard](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/5.png)
+![User Dashboard](https://github.com/user-attachments/assets/22c3700a-ba00-4027-9133-e1758bb3e18a)
 
 ### Booking Confirmation
-![Booking Confirmation](https://github.com/nitishfire/triphub/raw/master/raw-github-resources/images/6.png)
+![Booking Confirmation](https://github.com/user-attachments/assets/0f04a098-32ea-4868-83f5-d8d70e360d3e)
 
 ---
 
