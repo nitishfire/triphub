@@ -10,6 +10,11 @@ export function AuthProvider({ children }) {
     } catch { return null; }
   });
   const [userBalance, setUserBalance] = useState(0);
+  // Avatar stored separately so the large base64 string doesn't bloat the auth token object
+  const [userAvatar, setUserAvatar] = useState(() => {
+    try { return localStorage.getItem('triphub_avatar') || ''; }
+    catch { return ''; }
+  });
 
   const login = (userData) => {
     localStorage.setItem('triphub_token', userData.token);
@@ -20,15 +25,24 @@ export function AuthProvider({ children }) {
   const logout = () => {
     localStorage.removeItem('triphub_token');
     localStorage.removeItem('triphub_user');
+    localStorage.removeItem('triphub_avatar');
     setAuth(null);
     setUserBalance(0);
+    setUserAvatar('');
   };
 
   const updateUserBalance = (balance) => setUserBalance(balance);
 
+  const updateUserAvatar = (avatar) => {
+    const val = avatar || '';
+    localStorage.setItem('triphub_avatar', val);
+    setUserAvatar(val);
+  };
+
   return (
     <AuthContext.Provider value={{
       auth, login, logout, userBalance, updateUserBalance,
+      userAvatar, updateUserAvatar,
       // 'customer' is the legacy DB value — treat it the same as 'user'
       isUser: auth?.type === 'user' || auth?.type === 'customer',
       isHotel: auth?.type === 'hotel',

@@ -6,7 +6,7 @@ import { PageSpinner } from '../components/Spinner';
 import toast from 'react-hot-toast';
 
 export default function UserProfile() {
-  const { auth, login } = useAuth();
+  const { auth, login, updateUserAvatar } = useAuth();
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [editMode, setEditMode] = useState(false);
@@ -54,8 +54,9 @@ export default function UserProfile() {
       });
       const updated = res.data;
       setStats(prev => ({ ...prev, ...updated }));
-      // Sync name change into auth context / localStorage
+      // Sync name + avatar back into auth context / localStorage
       login({ ...auth, name: updated.name });
+      updateUserAvatar(updated.avatar);
       toast.success('Profile updated successfully!');
       setEditMode(false);
     } catch (err) {

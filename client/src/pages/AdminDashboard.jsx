@@ -322,8 +322,12 @@ export default function AdminDashboard() {
                         )}
                       </div>
                       <div className="absolute -bottom-8 left-5">
-                        <div className={"w-16 h-16 rounded-2xl bg-gradient-to-br " + avatarColor + " flex items-center justify-center text-2xl font-black text-white shadow-xl ring-4 ring-white"}>
-                          {(user.name || 'U')[0].toUpperCase()}
+                        <div className={"w-16 h-16 rounded-2xl shadow-xl ring-4 ring-white overflow-hidden " + (!user.avatar ? "bg-gradient-to-br " + avatarColor + " flex items-center justify-center" : '')}>
+                          {user.avatar ? (
+                            <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
+                          ) : (
+                            <span className="text-2xl font-black text-white">{(user.name || 'U')[0].toUpperCase()}</span>
+                          )}
                         </div>
                       </div>
                     </div>

@@ -4,7 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
 export default function Navbar() {
-  const { auth, logout, isUser, isHotel, isAdmin, userBalance } = useAuth();
+  const { auth, logout, isUser, isHotel, isAdmin, userBalance, userAvatar } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -91,8 +91,14 @@ export default function Navbar() {
             {auth && (
               <div className="flex items-center gap-2 ml-2 pl-3 border-l border-slate-200">
                 <div className="flex items-center gap-2.5 bg-slate-50 rounded-xl px-3 py-2">
-                  <div className="w-8 h-8 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-lg flex items-center justify-center shadow-md shadow-indigo-500/20">
-                    <span className="text-white font-bold text-xs">{(auth.name || auth.username || '?')[0].toUpperCase()}</span>
+                  <div className="w-8 h-8 rounded-lg overflow-hidden shadow-md shadow-indigo-500/20 shrink-0">
+                    {userAvatar && isUser ? (
+                      <img src={userAvatar} alt="" className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
+                        <span className="text-white font-bold text-xs">{(auth.name || auth.username || '?')[0].toUpperCase()}</span>
+                      </div>
+                    )}
                   </div>
                   <div className="hidden lg:block">
                     <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider leading-none">{auth.type}</p>
@@ -159,8 +165,14 @@ export default function Navbar() {
               {auth && (
                 <div className="border-t border-slate-100 mt-3 pt-3">
                   <div className="flex items-center gap-3 px-4 py-2 mb-2">
-                    <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-violet-600 rounded-xl flex items-center justify-center shadow-md">
-                      <span className="text-white font-bold">{(auth.name || auth.username || '?')[0].toUpperCase()}</span>
+                    <div className="w-10 h-10 rounded-xl overflow-hidden shadow-md shrink-0">
+                      {userAvatar && isUser ? (
+                        <img src={userAvatar} alt="" className="w-full h-full object-cover" />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center">
+                          <span className="text-white font-bold">{(auth.name || auth.username || '?')[0].toUpperCase()}</span>
+                        </div>
+                      )}
                     </div>
                     <div>
                       <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">{auth.type}</p>
