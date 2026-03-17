@@ -147,8 +147,11 @@ triphub/
 
 ## Screenshots 📸
 
+### Dashboard
+![Dashboard](<img width="1894" height="870" alt="image" src="https://github.com/user-attachments/assets/37998b8d-1121-46c7-8424-022effa8c742" />)
+
 ### Login Page
-![Login Page](https://github.com/nitishfire/triphub/raw/master/Screenshot/1.png)
+![Login Page](<img width="1907" height="851" alt="image" src="https://github.com/user-attachments/assets/6498a9ae-832e-4a17-b45b-dfb07cd3a9e0" />)
 
 ### Hotel Listings
 ![Hotel Listings](https://github.com/nitishfire/triphub/raw/master/Screenshot/2.png)
