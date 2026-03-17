@@ -34,6 +34,16 @@ function RequireAuth({ children, type }) {
   return children;
 }
 
+function PublicOnlyRoute({ children }) {
+  const { auth } = useAuth();
+  if (auth) {
+    if (auth.type === 'admin') return <Navigate to="/admin" replace />;
+    if (auth.type === 'hotel') return <Navigate to="/hotel/dashboard" replace />;
+    return <Navigate to="/dashboard" replace />;
+  }
+  return children;
+}
+
 export default function App() {
   const { auth } = useAuth();
   const location = useLocation();
@@ -43,11 +53,11 @@ export default function App() {
       <Navbar />
       <div className="flex-1">
         <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/hotel/login" element={<HotelLoginPage />} />
-          <Route path="/hotel/register" element={<HotelRegisterPage />} />
+          <Route path="/" element={<PublicOnlyRoute><LandingPage /></PublicOnlyRoute>} />
+          <Route path="/login" element={<PublicOnlyRoute><LoginPage /></PublicOnlyRoute>} />
+          <Route path="/register" element={<PublicOnlyRoute><RegisterPage /></PublicOnlyRoute>} />
+          <Route path="/hotel/login" element={<PublicOnlyRoute><HotelLoginPage /></PublicOnlyRoute>} />
+          <Route path="/hotel/register" element={<PublicOnlyRoute><HotelRegisterPage /></PublicOnlyRoute>} />
           <Route path="/dashboard" element={<RequireAuth type="user"><UserDashboard /></RequireAuth>} />
           <Route path="/profile" element={<RequireAuth type="user"><UserProfile /></RequireAuth>} />
           <Route path="/bookings" element={<RequireAuth type="user"><UserBookings /></RequireAuth>} />
